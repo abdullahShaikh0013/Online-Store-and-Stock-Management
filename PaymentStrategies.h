@@ -32,6 +32,24 @@ private:
 public:
     Order(int id, CartItem** orderItems, int count, double orderTotal) : orderID(id), items(orderItems), itemCount(count), total(orderTotal) { }
 
+    Order(int id, CartItem** sourceItems, int count, double orderTotal) {
+        // Implementing Deep Copy from the Customer's Cart to the final Order
+
+        orderID = id;
+        itemCount = count;
+        total = orderTotal;
+
+        items = new CartItem * [itemCount];
+
+        for (int i = 0; i < itemCount; i++) {
+            Product p = sourceItems[i]->getProduct();
+            int q = sourceItems[i]->getQuantity();
+            items[i] = new CartItem(p, q);
+        }
+
+        cout << "Order #" << orderID << " created successfully with a deep copy." << endl;
+    }
+
     ~Order() {
         // Cleaning up the array of items assigned to this order
         for (int i = 0; i < itemCount; i++) {

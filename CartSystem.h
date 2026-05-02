@@ -18,6 +18,12 @@ public:
     double getPrice() override { 
         return product.getPrice() * quantity; 
     }
+    Product getProduct() const {
+        return product;
+    }
+    int getQuantity() const {
+        return quantity;
+    }
 };
 
 class Cart : public CartComponent {
@@ -39,12 +45,18 @@ public:
         items = new CartComponent * [capacity];
     }
     ~Cart() {
-        for (int i = 0; i < count; i++) delete items[i];
+        for (int i = 0; i < count; i++) {
+            delete items[i];
+            items[i] = nullptr;
+        }
         delete[] items;
+        items = nullptr;
     }
 
     void addItem(CartComponent* item) {
-        if (count >= capacity) resize();
+        if (count >= capacity) {
+            resize();
+        }
         items[count++] = item;
     }
 
@@ -56,6 +68,15 @@ public:
             }
             count--;
         }
+    }
+
+    // Clear up for next order
+    void clearCart() {
+        for (int i = 0; i < count; i++) {
+            delete items[i];
+        }
+        count = 0;
+        cout << "Cart has been emptied." << endl;
     }
 
     double getPrice() override {
