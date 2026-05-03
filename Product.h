@@ -132,4 +132,14 @@ public:
             observers[i]->update(message);
         }
     }
+
+    int getCount() {
+        return count;
+    }
+    Product* getProductAt(int index) {
+        if (index >= 0 && index < count) {
+            return products[index];
+        }
+        return nullptr;
+    }
 };

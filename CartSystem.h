@@ -81,7 +81,18 @@ public:
 
     double getPrice() override {
         double total = 0;
-        for (int i = 0; i < count; i++) total += items[i]->getPrice();
+        for (int i = 0; i < count; i++) {
+            total += items[i]->getPrice();
+        }
         return total;
+    }
+    int getItemsCount() {
+        return count;
+    }
+    CartComponent* getItemAt(int index) {
+        if (index >= 0 && index < count) {
+            return items[index];
+        }
+        return nullptr;
     }
 };
