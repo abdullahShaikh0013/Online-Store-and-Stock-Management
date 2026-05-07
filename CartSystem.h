@@ -76,7 +76,7 @@ public:
             delete items[i];
         }
         count = 0;
-        cout << "Cart has  been  emptied." << endl;
+        cout << "Cart has  been  emptiyed." << endl;
     }
 
     double getPrice() override {
