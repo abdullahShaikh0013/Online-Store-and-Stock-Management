@@ -11,7 +11,7 @@ private:
     double price;
     int stock;
 public:
-    Product(int id, string name, double price, int stock) : id(id), name(name), price(price), stock(stock) { }
+    Product(int id, string name, double price, int stock) : id(id), name(name), price(price), stock(stock) {}
 
     double getPrice() const {
         return price;
@@ -25,11 +25,11 @@ public:
     int getStock() const {
         return stock;
     }
-    void increaseStock(int quantity) { 
-        stock += quantity; 
+    void increaseStock(int quantity) {
+        stock += quantity;
     }
-    void reduceStock(int quantity) { 
-        stock -= quantity; 
+    void reduceStock(int quantity) {
+        stock -= quantity;
     }
 };
 
@@ -85,7 +85,7 @@ public:
                 notify("RESTOCK: " + p->getName() + " stock increased by " + to_string(quantityChange));
             }
             else if (quantityChange < 0) {
-                p->reduceStock(-quantityChange); // Pass as positive number to reduceStock (See reduceStock() code in Product)
+                p->reduceStock(-quantityChange); 
 
                 if (p->getStock() == 0) {
                     notify("CRITICAL: " + p->getName() + " is completely out of stock!");
@@ -111,10 +111,10 @@ public:
         if (targetIndex != -1) {
             string removedName = products[targetIndex]->getName();
 
-            // DELETE the actual Product object from the heap
+            
             delete products[targetIndex];
 
-            // Shift all subsequent pointers ONE space to the LEFT
+           
             for (int i = targetIndex; i < count - 1; i++) {
                 products[i] = products[i + 1];
             }
@@ -142,4 +142,4 @@ public:
         }
         return nullptr;
     }
-};
+}; 
