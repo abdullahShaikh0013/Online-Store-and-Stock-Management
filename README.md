@@ -14,3 +14,12 @@ Moving forth, today we'll be working on basic implementation together and tomorr
 1. choice from menu is looped until 1-5, every other one is determined using functions with try-catch so ensure the error does not cause the program to crash. Still need to test those out considering i only used online tutorials in a rush which I didn't fully understand.
 
 Left with testing functionalities in main.cpp. Then we're only left with linking the GUI and and testing all functionalities for a final time. 
+After that we tested most of the functionalities in main.cpp and fixed (the small issues that were coming up mostly related to input handling and menu flow). The try-catch part also worked fine after testing, so the program does not crash on wrong inputs anymore.
+Then we moved towards linking the GUI with the backend. Since we were using Dear ImGui it was comparatively easier to connect buttons with our functions. We basically mapped GUI actions like clicking buttons for add product view stock etc to the functions we already made in the backend.
+Our GUI is based on an online store and stock management system, so we added basic screens like
+Login admin/customer
+Product display
+Stock management for admin
+Simple options for customer side
+After linking we tested everything again to make sure GUI and backend are working together properly. There were some minor bugs like data not updating instantly or wrong values showing but we fixed them.
+Finally we did complete testing of the system  checking all menus, inputs, and features from both admin and customer side. Now the project is fully working and everything is connected properly.
