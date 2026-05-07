@@ -14,9 +14,9 @@ private:
     Product product; // Composition as per UML
     int quantity;
 public:
-    CartItem(Product p, int q) : product(p), quantity(q) { }
-    double getPrice() override { 
-        return product.getPrice() * quantity; 
+    CartItem(Product p, int q) : product(p), quantity(q) {}
+    double getPrice() override {
+        return product.getPrice() * quantity;
     }
     Product getProduct() const {
         return product;
@@ -76,7 +76,7 @@ public:
             delete items[i];
         }
         count = 0;
-        cout << "Cart has been emptied." << endl;
+        cout << "Cart has  been  emptied." << endl;
     }
 
     double getPrice() override {
