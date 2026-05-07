@@ -36,4 +36,4 @@ public:
         observers[observerCount++] = o;
     }
     virtual void notify(string message) = 0;
-};
+}; 
